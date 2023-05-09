@@ -1,17 +1,24 @@
 #!/usr/bin/python
 
 import telebot
+import json
 import numpy as np
 import cv2
+from shapely.geometry import Polygon
+from io import BytesIO
 from ultralytics import YOLO
 import torch
-from io import BytesIO
-from shapely.geometry import Polygon
 
+# Define colors
 COLORS = [(98, 231, 4), (228, 161, 0)] # Green and blue
 CLASSES = ['capsules', 'tablets']
 
-API_TOKEN = '5727108383:AAG-oPn1UgB39Z_KbKqAyn8hRSjQETT60XM'
+# Read file with API token and set API_TOKEN
+with open('api_key.json', 'r') as f:
+    data = json.load(f)
+    token = data['api_key']
+
+API_TOKEN = token
 
 bot = telebot.TeleBot(API_TOKEN)
 
