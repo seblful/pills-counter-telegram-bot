@@ -1,0 +1,3 @@
+pytelegrambotapi==4.11.0
+ultralytics==8.0.94
+shapely==2.0.1
